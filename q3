@@ -1,0 +1,18 @@
+
+def sqrt(n):
+  x = n;
+  while True:
+    y = (x + n/x)/2
+    # print y, x
+    if y >= x:
+        return int(x)
+    x = y
+
+
+# num = input()
+# OR
+num = 121
+
+res = sqrt(num)
+print(res*res)
+
