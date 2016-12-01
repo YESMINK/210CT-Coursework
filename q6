@@ -1,0 +1,14 @@
+
+
+
+X = ['This', 'is', 'awesome']
+print(X)
+
+# create new list
+task6List =[]
+
+for i in range(1, len(X)+1):
+    task6List.append(X[-i]) 
+    
+print(" ".join(task6List)) #print final outcome
+    
