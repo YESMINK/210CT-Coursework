@@ -1,0 +1,25 @@
+
+
+import random # ..1
+
+# create new list 
+listX = [] # ..1
+
+def shuffle(numberList): # ..1
+
+    print ('Array of Numbers:', numberList) # ..1
+
+    for i in range(len(numberList)): # ..n
+
+        randomValue = random.choice(numberList) # ..n
+        listX.append(randomValue) #modifying the list # ..n
+        numberList.remove(randomValue) # ..n
+
+    print ('\nRandom Array of Numbers:', listX)
+# adding elements to the original list
+numberList = ['1', '2', '3', '4', '5', '6'] # ..1
+shuffle(numberList) # ..1
+
+'big O = 5 + 4n'
+'big O = n'
+
