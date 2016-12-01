@@ -1,0 +1,65 @@
+
+
+# scaler multiplication of a number with matrix
+def scalermul(num, X):
+    for i in range(len(X)):
+        # iterate through columns
+        for j in range(len(X[0])):
+            X[i][j] *= num
+    return X
+
+# multiplying matrix with matrix
+def matmul(X, Y):
+    result = [[0,0,0],
+             [0,0,0],
+             [0,0,0]]
+
+    # iterate through rows of X
+    for i in range(len(X)):
+       # iterate through columns of Y
+       for j in range(len(Y[0])):
+           # iterate through rows of Y
+           for k in range(len(Y)):
+               result[i][j] += X[i][k] * Y[k][j]
+
+    return result
+
+# addition of two matrices
+def matadd(X, Y):
+    result = [[0,0,0],
+             [0,0,0],
+             [0,0,0]]
+
+    # iterate through rows
+    for i in range(len(X)):
+       # iterate through columns
+       for j in range(len(X[0])):
+           result[i][j] = X[i][j] + Y[i][j]
+    return result
+
+# subtraction of two matrices
+def matsub(X, Y):
+    result = [[0,0,0],
+             [0,0,0],
+             [0,0,0]]
+
+    # iterate through rows
+    for i in range(len(X)):
+       # iterate through columns
+       for j in range(len(X[0])):
+           result[i][j] = X[i][j] - Y[i][j]
+    return result
+
+# Back to question
+# A=B*C –2*(B+C)
+
+B = [[1,2,3],
+    [4,5,6],
+    [7,8,9]]
+
+C = [[5,8,1],
+    [6,7,3],
+    [4,5,9]]
+
+A = matsub(matmul(B,C),scalermul(2, matadd(B,C)))
+print(A)
