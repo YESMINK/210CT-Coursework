@@ -1,0 +1,31 @@
+
+
+
+# Dijkstra's algorithm
+
+# import heap queue algorithm
+
+import heapq
+
+def shortestPath(graph, start, end):
+    queue = [(0, start, [])]
+    seen = set()
+    while True:
+        (cost, v, path) = heapq.heappop(queue) # return smallest item
+        if v not in seen:
+            path = path + [v]
+            seen.add(v)
+            if v == end:
+                return cost, path
+            for (next, c) in graph[v].items():
+                heapq.heappush(queue, (cost + c, next, path))
+#s,u,v,x,y are nodes
+graph = {
+    's': {'u': 10, 'x': 5}, # intergers in the graph are the weight of the edge
+    'u': {'v': 1, 'x': 2},
+    'v': {'y': 4},
+    'x': {'u': 3, 'v': 9, 'y': 2},
+    'y': {'s': 7, 'v': 6}
+}
+
+print(shortestPath(graph, 's', 'v'))
