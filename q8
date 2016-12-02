@@ -1,0 +1,16 @@
+
+
+#code to remove vowels out of string 'beautiful'
+
+#identifying all vowels
+
+vowels = ('a', 'e', 'i', 'o', 'u')
+
+string_message = ('beautiful')
+
+for letter in string_message:
+    if letter not in vowels:
+        string_message=letter
+        print (string_message)
+
+        
