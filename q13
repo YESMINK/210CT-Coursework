@@ -1,0 +1,19 @@
+
+# Adjacency list for a graph
+
+
+graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+
+print(graph)
+
+# Add edge to graph
+graph['A'].add('D') # edge AD
+graph['D'].add('A') # edge DA
+
+# Add node to graph
+graph['G']=set(['A'])
