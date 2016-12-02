@@ -1,0 +1,18 @@
+
+
+def between(L,low,high): #..1 
+    l2 = [] #..1 / new list
+    for i in L: #..n
+        if(i > low and i < high): #..n
+            l2.append(i) #..n
+    return len(l2)>0 #..n / greater than 0 it'll return True
+
+
+l = [2, 3, 5, 7, 9, 13] #..1
+low = 10 #..1
+high = 14 #..1
+
+print(between(l, low, high)) #..1
+
+'big O = 6 + 4n'
+'big O = n'
