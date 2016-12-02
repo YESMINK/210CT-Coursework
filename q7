@@ -1,0 +1,19 @@
+
+# Check if a number is prime
+
+# Input: n & d, where initial d is n-1
+def isPrime(n,d):
+    if n<2:
+        return 0
+    if d == 1:
+        return True
+    else:
+        if (n % d == 0):
+            return False
+        else:
+            return isPrime(n,d-1)
+
+print(isPrime(3,2))
+print(isPrime(5,4))
+print(isPrime(7,6))
+print(isPrime(10,9))
